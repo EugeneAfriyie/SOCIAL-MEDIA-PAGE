@@ -12,12 +12,12 @@
     --color-secondary: hsl(252,100%,90%);
     --color-success: hsl(120,95%,65%);
     --color-danger: hsl(0,95%,65%);
-    --color-black: hsl(120,30%,10%);
+    --color-black: hsl(252,30%,10%);
 
     --border-radius:2rem;
     --card-border-radius:1rem;
     --btn-padding:0.6rem 2rem ;
-    --seacrh-padding:0.6ren 1rem;
+    --seacrh-padding:0.6rem 1rem;
     --card-padding:1rem;
 }
 
@@ -33,7 +33,7 @@
 
 body{
     font-family: "Poppins", sans-serif;
-    color: var(--color-white);
+    color: var(--color-dark);
     background-color: var(--color-light);
     overflow-x: hidden;
     
@@ -79,3 +79,62 @@ img{
     background-color: var(--color-primary);
     color:white;
 }
+
+.text-bold{
+    font-weight: 500;
+}
+
+.text-muted{
+    color:var(--color-gray);
+    
+}
+
+/* ************* NAVBAR ******* */
+
+    nav{
+        width:100%;
+        background-color: var(--color-white);
+        padding: 0.7rem 0;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+
+    }
+
+    nav .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav .search-bar{
+        background: var(--color-light);
+        border-radius: var(--border-radius);
+        padding: var(--seacrh-padding);
+    } 
+
+    nav .search-bar input[type="search"]{
+    background: transparent;
+    width: 30vw;
+    margin-left: 1rem;
+    font-style: 0.9rem;
+    color: var(--color-dark);
+    }
+
+    nav .search-bar input[type="search"]::placeholder{
+        color: var(--color-gray);
+    }
+
+
+    nav .create{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+    }
+
+
+    /*------------------------------ MAIN-------------------------- */
+
+
+    
