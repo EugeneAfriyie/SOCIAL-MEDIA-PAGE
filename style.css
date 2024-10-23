@@ -40,6 +40,7 @@ body{
     color: var(--color-dark);
     background-color: var(--color-light);
     overflow-x: hidden;
+    padding-bottom: 2000px;
     
 }
 
@@ -394,6 +395,65 @@ img{
     color: var(--color-dark);
     margin-right: 1rem;
 }
+
+
+/* ************************** FEEDS **************************/
+.middle .feeds .feed{
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    margin: 1rem 0;
+    padding: var(--card-padding);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.middle .feed .head{
+    display: flex;
+    justify-content: space-between;
+
+}
+.middle .feed .user{
+    display: flex;
+    gap: 1rem;
+}
+
+.middle .feed .photo{
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: o.7rem 0;
+}
+
+.middle .feed .action-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem;
+}
+
+.middle .liked-by{
+    display: flex;
+}
+
+.middle .liked-by span{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    border: 2px solid var(--color-white);
+    margin-left: -0.6rem;
+}
+
+.middle .liked-by span:first-child{
+    margin: 0;
+}
+
+.middle .liked-by p{
+    margin-left: 0.6rem;
+}
+
+
 
 
 
