@@ -44,7 +44,12 @@ const searchMessage = ()=>{
 console.log(searchVal)
 message.forEach(chat => {
     let name = chat.querySelector('h5').textContent.toLowerCase();
-    console.log(name);
+    if(name.indexOf(searchVal) != -1){
+        chat.style.display = 'flex';
+    }else{
+        chat.style.display = 'none';
+        
+    }
 });
 }
 
@@ -63,3 +68,7 @@ messageNotification.addEventListener('click', ()=>{
 
     },2000)
 })
+
+
+
+
