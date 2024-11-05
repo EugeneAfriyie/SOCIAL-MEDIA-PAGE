@@ -5,8 +5,8 @@ const menuItems = document.querySelectorAll('.menu-item');
 
 const messageNotification = document.querySelector('#messages-notifications');
 const messages = document.querySelector('.messages');
-const message = document.querySelector('.message');
-const messageSearch = document.querySelector('.message-search');
+const message = document.querySelectorAll('.messages .message');
+const messageSearch = document.querySelector('#message-search');
 
 
 
@@ -28,7 +28,7 @@ menuItems.forEach(item=>{
             document.querySelector('.notification-popup').style.display = 'none';
         }else{
             document.querySelector('.notification-popup').style.display = 'block';
-            document.querySelector('#notification .notification-count').style.display = 'none';
+            document.querySelector('#notifications .notification-count').style.display = 'none';
         }
     })
 })
@@ -36,6 +36,24 @@ menuItems.forEach(item=>{
 
 // ************** MESSAGES *******************
 
+
+//  Searches chats
+
+const searchMessage = ()=>{
+    const searchVal = messageSearch.value.toLowerCase();
+console.log(searchVal)
+message.forEach(chat => {
+    let name = chat.querySelector('h5').textContent.toLowerCase();
+    console.log(name);
+});
+}
+
+// search chat
+messageSearch.addEventListener('keyup',searchMessage)
+
+
+
+// highlight the message card when the message menu item is clicked
 messageNotification.addEventListener('click', ()=>{
     messages.style.boxShadow = '0 0 1rem var(--color-primary)';
     document.querySelector('#messages-notifications .notification-count').style.display = 'none';
