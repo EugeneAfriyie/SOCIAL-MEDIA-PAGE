@@ -1,5 +1,15 @@
+
+
+
 /// SIDEBAR
 const menuItems = document.querySelectorAll('.menu-item');
+
+
+// THEME
+const theme = document.getElementById('theme');
+const themeModal = document.querySelector('.customize-theme');
+const fontSize = document.querySelectorAll('.choose-size span');
+const root = document.querySelector('root');
 
 //messages
 
@@ -72,3 +82,55 @@ messageNotification.addEventListener('click', ()=>{
 
 
 
+
+// THEME CUSTROMIZATION
+
+
+// open modal
+const openThemeModal = ()=>{
+    themeModal.style.display = 'grid'
+}
+const closeThemeModal = (e)=>{
+    if(e.target.classList.contains('customize-theme')){
+        themeModal.style.display = 'none';
+    }
+}
+
+
+
+// close modal
+themeModal.addEventListener('click', closeThemeModal)
+
+// opem modal
+theme.addEventListener('click', openThemeModal);
+
+
+
+
+//  FONT SIZE CUSTOMIZATION
+
+
+
+fontSize.forEach(size =>{
+    let fontsize;
+
+    if(size.classList.contains('font-size-1')){
+        fontSize = '10px'
+    }
+    else if(size.classList.contains('font-size-2')){
+        fontSize = '13px'
+    }
+    else if(size.classList.contains('font-size-3')){
+        fontSize = '16px'
+    }
+    else if(size.classList.contains('font-size-4')){
+        fontSize = '19px'
+    }
+    else if(size.classList.contains('font-size-5')){
+        fontSize = '22px'
+    }
+
+    // change font ize of the root htm element
+
+    document.querySelector('html').style.fontSize - fontSize;
+})
