@@ -4,11 +4,17 @@
 
 
 :root{
-    --color-white: hsl(252,30%,100%);
-    --color-dark: hsl(252,30%,17%);
-    --color-light: hsl(252,30%,95%);
-    --color-gray: hsl(252,15%,65%);
-    --color-primary: hsl(252,75%,60%);
+
+    --dark-color-lightness:17%;
+    --white-color-lightness:100%;
+    --light-color-lightness:95%;
+
+    --primary-color-hue :252;
+    --color-white: hsl(252,30%,var(--white-color-lightness));
+    --color-dark: hsl(252,30%,var(--dark-color-lightness));
+    --color-light: hsl(252,30%,var(--light-color-lightness));
+    --color-gray: hsl(var(--primary-color-hue),15%,65%);
+    --color-primary: hsl(var(--primary-color-hue),75%,60%);
     --color-secondary: hsl(252, 86%, 85%);
     --color-success: hsl(120,95%,65%);
     --color-danger: hsl(0,95%,65%);
@@ -117,6 +123,8 @@ img{
         background: var(--color-light);
         border-radius: var(--border-radius);
         padding: var(--seacrh-padding);
+        /* cursor: pointer; */
+
     } 
 
    .search-bar input[type="search"]{
@@ -187,6 +195,8 @@ img{
         margin-top: 1rem;
         background: var(--color-white);
         border-radius: var(--card-border-radius);
+        /* overflow: scroll; */
+        /* height: 400px; */
     }
 
     .left .sidebar .menu-item{

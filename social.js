@@ -9,7 +9,12 @@ const menuItems = document.querySelectorAll('.menu-item');
 const theme = document.getElementById('theme');
 const themeModal = document.querySelector('.customize-theme');
 const fontSize = document.querySelectorAll('.choose-size span');
-const root = document.querySelector('root');
+const root = document.querySelector(':root');
+const colorPalette = document.querySelectorAll('.choose-color span');
+const bgcolorPalette = document.querySelectorAll('.choose-bg div');
+
+
+
 
 //messages
 
@@ -105,32 +110,148 @@ themeModal.addEventListener('click', closeThemeModal)
 theme.addEventListener('click', openThemeModal);
 
 
+// remove active class from spans or font size selectors
 
+const removeSelector = (claa) => {
+    fontSize.forEach (size =>{
+        size.classList.remove('active');
+    })
+}
 
 //  FONT SIZE CUSTOMIZATION
-
-
-
 fontSize.forEach(size =>{
-    let fontsize;
+    console.log()
+    
+    size.addEventListener('click',()=>{
+       let fontSiz = 0;
+       removeSelector();
+       size.classList.toggle('active');
+
+
 
     if(size.classList.contains('font-size-1')){
-        fontSize = '10px'
+        fontSiz = '10px';
+        root.style.setProperty('--sticky-top-left','5.4rem');
+        root.style.setProperty('--sticky-top-right','5.4rem');
     }
     else if(size.classList.contains('font-size-2')){
-        fontSize = '13px'
+        fontSiz = '13px';
+        root.style.setProperty('--sticky-top-left','5.4rem');
+        root.style.setProperty('--sticky-top-right','-7rem');
     }
     else if(size.classList.contains('font-size-3')){
-        fontSize = '16px'
+        fontSiz = '16px';
+        root.style.setProperty('--sticky-top-left','-2rem');
+        root.style.setProperty('--sticky-top-right','-17rem');
     }
     else if(size.classList.contains('font-size-4')){
-        fontSize = '19px'
+        fontSiz = '19px';
+        root.style.setProperty('--sticky-top-left','-5rem');
+        root.style.setProperty('--sticky-top-right','-25rem');
     }
     else if(size.classList.contains('font-size-5')){
-        fontSize = '22px'
+        fontSiz = '22px';
+        root.style.setProperty('--sticky-top-left','-12rem');
+        root.style.setProperty('--sticky-top-right','-35rem');
     }
-
-    // change font ize of the root htm element
-
-    document.querySelector('html').style.fontSize - fontSize;
+    
+        // change font ize of the root html element
+        document.querySelector('html').style.fontSize = fontSiz;
+   })
 })
+
+// remove active class from spans or color
+
+const changeActiveColorClass = () => {
+    colorPalette.forEach (colorPicker =>{
+        colorPicker.classList.remove('active');
+    })
+}
+
+// change primary colors 
+ colorPalette.forEach(colorPicker => {
+    colorPicker.addEventListener('click' ,()=>{
+        let primaryHue;
+        changeActiveColorClass();
+        colorPicker.classList.toggle('active');
+
+
+        if(colorPicker.classList.contains('color-1')){
+            primaryHue = 252;
+        }
+        else if(colorPicker.classList.contains('color-2')){
+            primaryHue = 52;
+        }
+        if(colorPicker.classList.contains('color-3')){
+            primaryHue = 352;
+        }
+        if(colorPicker.classList.contains('color-4')){
+            primaryHue = 152;
+        }
+        if(colorPicker.classList.contains('color-5')){
+            primaryHue = 282;
+        }
+
+        
+        root.style.setProperty('--primary-color-hue',primaryHue);
+    })
+ });
+
+
+
+
+
+//  THEME BACKGROUND VALUES
+
+let lightColorLightness;
+let darkColorLightness;
+let whiteColorLightness;
+
+// changes background color
+
+const changeBg = () => {
+    root.style.setProperty('--dark-color-lightness',darkColorLightness)
+    root.style.setProperty('--white-color-lightness',whiteColorLightness)
+    root.style.setProperty('--light-color-lightness',lightColorLightness)
+}
+
+const changeActiveBackgroundColorClass = () => {
+    bgcolorPalette.forEach (backgroundColorPicker =>{
+        backgroundColorPicker.classList.remove('active');
+    })
+}
+
+
+bgcolorPalette.forEach(bgcolorPicker => {
+    bgcolorPicker.addEventListener('click' ,()=>{
+     
+        changeActiveBackgroundColorClass();
+        bgcolorPicker.classList.toggle('active');
+
+
+        if(bgcolorPicker.classList.contains('bg-2')){
+        darkColorLightness = '95%';
+         lightColorLightness = '15%';
+         whiteColorLightness = '20%';
+        }
+
+        else if(bgcolorPicker.classList.contains('bg-3')){
+        lightColorLightness = '0%';
+         darkColorLightness = '95%';
+         whiteColorLightness = '10%';
+        }
+        else if(bgcolorPicker.classList.contains('bg-1')){
+            window.location.reload();
+        }
+ 
+
+        
+        changeBg();
+    })
+ });
+
+
+
+
+
+
