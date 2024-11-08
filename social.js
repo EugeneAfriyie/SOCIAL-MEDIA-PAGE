@@ -41,12 +41,16 @@ menuItems.forEach(item=>{
 
         if(item.id != 'notifications'){
             document.querySelector('.notification-popup').style.display = 'none';
-        }else{
+        }
+        else{
             document.querySelector('.notification-popup').style.display = 'block';
             document.querySelector('#notifications .notification-count').style.display = 'none';
+            
         }
     })
 })
+
+
 
 
 // ************** MESSAGES *******************
@@ -63,7 +67,7 @@ message.forEach(chat => {
         chat.style.display = 'flex';
     }else{
         chat.style.display = 'none';
-        
+         
     }
 });
 }
@@ -77,7 +81,7 @@ messageSearch.addEventListener('keyup',searchMessage);
 messageNotification.addEventListener('click', ()=>{
     messages.style.boxShadow = '0 0 1rem var(--color-primary)';
     document.querySelector('#messages-notifications .notification-count').style.display = 'none';
-
+ 
     setTimeout(()=>{
         messages.style.boxShadow = 'none';
 
@@ -241,7 +245,10 @@ bgcolorPalette.forEach(bgcolorPicker => {
          whiteColorLightness = '10%';
         }
         else if(bgcolorPicker.classList.contains('bg-1')){
-            window.location.reload();
+            lightColorLightness = '95%';
+            darkColorLightness = '17%';
+            whiteColorLightness = '100%';
+
         }
  
 
@@ -249,8 +256,6 @@ bgcolorPalette.forEach(bgcolorPicker => {
         changeBg();
     })
  });
-
-
 
 
 

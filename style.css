@@ -46,7 +46,6 @@ body{
     color: var(--color-dark);
     background-color: var(--color-light);
     overflow-x: hidden;
-    /* padding-bottom: 2000px; */
     
 }
 
@@ -100,8 +99,7 @@ img{
     
 }
 
-/* ------------ NAVBAR css
------------------ */
+/* ------------ NAVBAR css ----------------- */
 
     nav{
         width:100%;
@@ -196,18 +194,8 @@ img{
         margin-top: 1rem;
         background: var(--color-white);
         border-radius: var(--card-border-radius);
-        /* overflow: scroll; */
-        /* height: 400px; */
-    
-        /* Hide scrollbar for non-hovered state */
-        scrollbar-width: none; /* Firefox */
+
     }
-    .left .sidebar::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
-    }
-    
-   
-    
 
     .left .sidebar .menu-item{
         display: flex;
@@ -287,6 +275,16 @@ img{
     /*   NOTIFICATION POPUP */
 
 
+
+    .not-overlay{
+        background-color: red;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: none;
+    }
+
+
     .left .notification-popup{
         position: absolute;
         top: 0;
@@ -299,6 +297,9 @@ img{
         z-index: 8;
         display: none;
     }
+
+
+   
 
     .left .notification-popup::before{
         content: "";
@@ -366,7 +367,7 @@ img{
 }
 
 .middle .stories .story:nth-child(1){
-    background: url(./images/me.JPG) no-repeat center center/cover;
+    background: url(./images/fante_2.jpg) no-repeat center center/cover;
 
 }
 .middle .stories .story:nth-child(2){
@@ -490,16 +491,8 @@ main .container .right{
     top: var(--sticky-top-left);
     bottom: 0;
     
-     /* overflow: scroll;
-    height: 100vh; */
-    
-        /* Hide scrollbar for non-hovered state */
-        scrollbar-width: none; /* Firefox */
     }
-    .left .sidebar::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
-    }
-
+  
 .right .messages{
     border-radius: var(--card-border-radius);
     background: var(--color-white);
@@ -588,8 +581,6 @@ main .container .right{
 
 .right .friend-request{
     margin-top: 1rem;
-    /* height: 470px;
-    overflow-y: scroll; */
 }
 
 .right .friend-reques h4{
