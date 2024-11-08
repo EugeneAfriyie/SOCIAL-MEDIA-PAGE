@@ -145,6 +145,7 @@ img{
         align-items: center;
         gap: 2rem;
 
+
     }
 
 
@@ -365,19 +366,19 @@ img{
 }
 
 .middle .stories .story:nth-child(1){
-    background: url(./images/story-1.jpg) no-repeat center center/cover;
+    background: url(./images/me.JPG) no-repeat center center/cover;
 
 }
 .middle .stories .story:nth-child(2){
-    background: url(./images/story-2.jpg) no-repeat center center/cover;
+    background: url(./images/madirid.png) no-repeat center center/cover;
 
 }
 .middle .stories .story:nth-child(3){
-    background: url(./images/story-3.jpg) no-repeat center center/cover;
+    background: url(./images/osei.png) no-repeat center center/cover;
 
 }
 .middle .stories .story:nth-child(4){
-    background: url(./images/story-4.jpg) no-repeat center center/cover;
+    background: url(./images/YouTube_1.webp) no-repeat center center/cover;
 
 }
 .middle .stories .story:nth-child(5){
@@ -405,6 +406,7 @@ img{
     background: var(--color-white);
     padding: 0.4rem var(--card-padding);
     border-radius: var(--border-radius);
+    
 }
 
 .middle .create-post input[type="text"]{
@@ -488,8 +490,8 @@ main .container .right{
     top: var(--sticky-top-left);
     bottom: 0;
     
-     overflow: scroll;
-    height: 100vh;
+     /* overflow: scroll;
+    height: 100vh; */
     
         /* Hide scrollbar for non-hovered state */
         scrollbar-width: none; /* Firefox */
@@ -499,8 +501,8 @@ main .container .right{
     }
 
 .right .messages{
-    background: var(--color-white);
     border-radius: var(--card-border-radius);
+    background: var(--color-white);
     padding: var(--card-padding);
 }
 
@@ -637,6 +639,7 @@ main .container .right{
 .customize-theme .card{
     background: var(--color-white);
     padding: 3rem;
+    box-shadow: 0 0 1rem var(--color-primary);
     border-radius: var(--card-border-radius);
     width: 50%;
     box-shadow: 0 0 1rem var(--color-primary);
