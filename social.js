@@ -69,7 +69,7 @@ message.forEach(chat => {
 }
 
 // search chat
-messageSearch.addEventListener('keyup',searchMessage)
+messageSearch.addEventListener('keyup',searchMessage);
 
 
 

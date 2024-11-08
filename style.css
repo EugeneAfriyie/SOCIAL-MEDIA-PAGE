@@ -294,7 +294,7 @@ img{
         background: var(--color-white);
         border-radius: var(--card-border-radius);
         padding: var(--card-padding);
-        box-shadow: 0 0 2rem hsl(var(--color-primary),75%,60% 25%);
+        box-shadow: 0 0 1rem var(--color-primary);
         z-index: 8;
         display: none;
     }
@@ -484,11 +484,19 @@ img{
 main .container .right{
     height: max-content;
     position: sticky;
-    top: var(--sticky-top-right);
+
+    top: var(--sticky-top-left);
     bottom: 0;
     
-
-}
+     overflow: scroll;
+    height: 100vh;
+    
+        /* Hide scrollbar for non-hovered state */
+        scrollbar-width: none; /* Firefox */
+    }
+    .left .sidebar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
 
 .right .messages{
     background: var(--color-white);
@@ -851,6 +859,7 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         position: absolute;
         left: -20rem;
         width: 20rem;
+        box-shadow: 0 0 2rem hsl(var(--color-primary));
     }
 
     .left .notification-popup::before{
